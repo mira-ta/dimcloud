@@ -1,0 +1,31 @@
+{
+    "name": "dimcloud",
+    "description": "SoundCloud dark theme designed with heart.",
+    "version": "1.0.0",
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "icons": {
+        "128": "dimlogo.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://soundcloud.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        }
+    ],
+
+    "browser_action": {
+        "default_title": "dimcloud",
+        "default_icon": "dimlogo.png"
+    },
+
+    "manifest_version": 2,
+    "web_accessible_resources": [
+        "dimcloud.css"
+    ]
+}
