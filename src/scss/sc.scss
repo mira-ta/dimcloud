@@ -22,6 +22,7 @@ In short, main universal classes of SoundCloud.
     transition: color 100ms ease-in-out;
 }
 
+
 .sc-button, .sc-input, .sc-tag {
     background-color: $background-color !important;
     &:not(.sc-button-selected) {
@@ -38,6 +39,12 @@ In short, main universal classes of SoundCloud.
             border-color: $adaptive-color-1 !important;
         }
     }
+}
+
+// Some fixes for hintButton. Like, an exception.
+.sc-button.hintButton {
+    border: none !important;
+    background-color: transparent !important;
 }
 
 
@@ -146,35 +153,35 @@ a.sc-ministats {
 
 // borders
 .sc-border-light {
-    border: 1px solid $adaptive-color-0 !important;
+    border: 1px solid $adaptive-color-0;
 }
 .sc-border-light-right {
-    border-right: 1px solid $adaptive-color-0 !important;
+    border-right: 1px solid $adaptive-color-0;
 }
 .sc-border-light-bottom {
-    border-bottom: 1px solid $adaptive-color-0 !important;
+    border-bottom: 1px solid $adaptive-color-0;
 }
 .sc-border-light-top {
-    border-top: 1px solid $adaptive-color-0 !important;
+    border-top: 1px solid $adaptive-color-0;
 }
 .sc-border-light-left {
-    border-left: 1px solid $adaptive-color-0 !important;
+    border-left: 1px solid $adaptive-color-0;
 }
 
 .sc-border-dark {
-    border: 1px solid $gray-color-5 !important;
+    border: 1px solid $gray-color-5;
 }
 .sc-border-dark-right {
-    border-right: 1px solid $gray-color-5 !important;
+    border-right: 1px solid $gray-color-5;
 }
 .sc-border-dark-bottom {
-    border-bottom: 1px solid $gray-color-5 !important;
+    border-bottom: 1px solid $gray-color-5;
 }
 .sc-border-dark-top {
-    border-top: 1px solid $gray-color-5 !important;
+    border-top: 1px solid $gray-color-5;
 }
 .sc-border-dark-left {
-    border-left: 1px solid $gray-color-5 !important;
+    border-left: 1px solid $gray-color-5;
 }
 
 

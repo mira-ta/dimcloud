@@ -189,8 +189,13 @@ html, body {
 
         &.sc-button-selected:hover {
             background-color: $adaptive-color-2 !important;
+        }
+
+        &.sc-button-selected {
             color: $adaptive-color-0 !important;
         }
+
+        color: $gray-color-4;
 
         &:not(:last-child) {
             border-bottom: none !important;
@@ -271,5 +276,62 @@ html, body {
         background-color: $container-color !important;
     }
 
+    background-color: $background-color !important;
+}
+
+.l-listen-wrapper .l-about-rows {
+    border-right: none !important;
+}
+
+.image__whiteOutline .image__full {
+    border: none !important;
+}
+
+.l-fixed-top-one-column > .l-top {
+    background-color: transparent !important;
+}
+
+.conversation {
+    .conversation__actions {
+        background-color: $container-color !important;
+        box-shadow: none !important;
+    }
+
+    .conversationMessage__body {
+        color: $gray-color-6;
+    }
+
+    .conversationMessage__from .sc-link-dark {
+        &:hover {
+            color: $adaptive-color-0 !important;
+        }
+        color: $gray-color-7 !important;
+    }
+
+    .composeMessage__bottomWrapper {
+        border-color: transparent !important;
+    }
+}
+
+.commentBadgeList__item {
+    border-top: none !important;
+}
+
+.l-messages-left .inbox {
+    .inbox__item {
+        .inboxItem {
+            &.active,
+            &:hover,
+            &:active {
+                background-color: $background-color !important;
+            }
+        }
+        &::before {
+            display: none !important;
+        }
+    }
+}
+
+.keyboardShortcuts__shortcutsGroup > dl > dt > kbd > kbd {
     background-color: $background-color !important;
 }
