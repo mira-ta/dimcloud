@@ -378,3 +378,36 @@ html, body {
         background: transparent !important;
     }
 }
+
+.compactTrackList {
+    border: none !important;
+
+    .compactTrackListItem__number,
+    .compactTrackListItem__trackTitle {
+        color: $gray-color-7;
+    }
+
+    .compactTrackListItem {
+        &.clickToPlay:hover {
+            .compactTrackListItem__number,
+            .compactTrackListItem__trackTitle {
+                color: $adaptive-color-0;
+            }
+        }
+
+        &.active,
+        &.clickToPlay:hover {
+            background-color: $background-color !important;
+        }
+
+        .compactTrackListItem__number,
+        .compactTrackListItem__trackTitle,
+        .compactTrackListItem__plays {
+            color: $gray-color-7;
+        }
+
+        .compactTrackListItem__additional {
+            background: none !important;
+        }
+    }
+}
