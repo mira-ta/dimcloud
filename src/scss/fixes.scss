@@ -335,3 +335,46 @@ html, body {
 .keyboardShortcuts__shortcutsGroup > dl > dt > kbd > kbd {
     background-color: $background-color !important;
 }
+
+.userDropbar {
+    .sc-button {
+        background-color: black !important;
+    }
+}
+
+.ownActivitiesList {
+    .ownActivitiesList__item {
+        border: none !important;
+        
+        .userBadge {
+            .userBadge__meta {
+                margin-top: 4px;
+            }
+
+            .sc-ministats-small.sc-ministats-sounds::before {
+                filter: invert(30%); // color is too gray
+            }
+        }
+
+        .ownActivity__user,
+        .ownActivity__top {
+            border: none !important;
+        }
+
+        .ownActivity__top {
+            display: flex;
+            .ownActivity__user {
+                flex-grow: 1;
+                padding-right: 112px;
+                padding-bottom: 9px;
+            }
+        }
+    }
+}
+
+.selectionPlaylistBanner {
+    background: transparent !important;
+    .backgroundGradient__buffer {
+        background: transparent !important;
+    }
+}
