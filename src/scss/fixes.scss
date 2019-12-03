@@ -164,7 +164,7 @@ html, body {
 .sound__soundActions,
 .commentForm__wrapper,
 .searchTitle {
-    background-color: transparent !important;
+    background-color: $container-color !important;
 }
 
 .soundBadge__additional {
@@ -262,6 +262,24 @@ html, body {
     .queue__hide {
         background-color: transparent !important;
         border-color: transparent !important;
+
+        &:active,
+        &:hover {
+            outline: none !important;
+            border: none !important;
+        }
+    }
+
+    .queueItemView__remove {
+        &:hover {
+            $remove-button-image-hover: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiNmODU0MDIiIGQ9Ik0xNS41IDkuMjA1bC0uNzA1LS43MDVMMTIgMTEuMjk1IDkuMjA1IDguNWwtLjcwNS43MDVMMTEuMjk1IDEyIDguNSAxNC43OTVsLjcwNS43MDVMMTIgMTIuNzA1bDIuNzk1IDIuNzk1LjcwNS0uNzA1TDEyLjcwNSAxMnoiLz4KPC9zdmc+Cg==";
+            background-image: url($remove-button-image-hover) !important;
+        }
+
+        background-position: -1px -1px !important;
+
+        $remove-button-image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiM4MDgwODAiIGQ9Ik0xNS41IDkuMjA1bC0uNzA1LS43MDVMMTIgMTEuMjk1IDkuMjA1IDguNWwtLjcwNS43MDVMMTEuMjk1IDEyIDguNSAxNC43OTVsLjcwNS43MDVMMTIgMTIuNzA1bDIuNzk1IDIuNzk1LjcwNS0uNzA1TDEyLjcwNSAxMnoiLz4KPC9zdmc+Cg==";
+        background-image: url($remove-button-image) !important;
     }
 }
 
@@ -288,7 +306,7 @@ html, body {
 }
 
 .l-fixed-top-one-column > .l-top {
-    background-color: transparent !important;
+    background-color: $container-color !important;
 }
 
 .conversation {
@@ -410,4 +428,51 @@ html, body {
             background: none !important;
         }
     }
+}
+
+.uploadMain {
+    > div,
+    .quotaMeterWrapper {
+        background: none !important;
+        border: none !important;
+    }
+}
+
+.tabs__headingContainer,
+.tabs__tabs {
+    background-color: transparent !important;
+}
+
+.truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper::after {
+    background: none !important;
+}
+
+.profileUploadFooter {
+    background-color: transparent;
+}
+
+.paging-eof::before {
+    background: none;
+}
+
+.topStatsModules {
+    .topStatsItemPlaceholder__text::after, .topStatsItemPlaceholder__text::before {
+        background-color: $background-color !important;
+    }
+
+    .topStats__wrapperEligible:focus, .topStats__wrapperEligible:hover {
+        background-color: transparent;
+    }
+
+    .topStatsModule__item {
+        border: 1px solid transparent;
+    }
+}
+
+.statsOverview__separator {
+    background-color: transparent !important;
+}
+
+.mixedSelectionModule {
+    border: none;
 }
