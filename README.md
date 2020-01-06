@@ -4,33 +4,17 @@
 
 ## A darker theme for SoundCloud.
 
-What if SoundCloud were dark? Ugh, you may have seen the extensions. But this one designed with a heart and a lot of ~~gloomy~~ love.
+What if SoundCloud were dark? Ugh, you may have seen the extensions. But this one designed with a heart and a lot of ~~gloomy~~ love. Feel absolutely free to contribute to it. Also, if you found a bug or css mistake, please, go to issues.
 
-Feel absolutely free to contribute to it. Also, if you found a bug or css mistake, please, go to issues.
+## Installing
 
-Is made with `sass/scss`.
-
-## Download
-
-It is undownloadable for a little time.
-
-## Contribution
-
-To build the extension you firstly need to copy `manifest.json` and `content.js` files.
-
-```sh
-$ npm run copy-manifest && npm run copy-content
-```
-
-And then run, and you will be running this often, unless you set `--watch`.
-
-```sh
-$ npm run build
-```
-
-To compile/transpile `sass/scss` into `css` right into `dist/dimcloud.css`.
+Go to `src` folder to checkout [readme](src/README.md).
 
 ## Changelog:
 
-v1.0a:
+v1.1.0a:
+- *Some changes,* and I have returned back to work. Or it seems I have at least.
+- *Remade project architecture*.
+
+v1.0.0a:
 - ~~***I got it right!***~~ Ugh, released, maybe? Am not sure, too much work left.

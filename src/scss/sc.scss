@@ -229,7 +229,7 @@ a.sc-ministats {
 }
 
 .g-form-section-head {
-    @extend .sc-border-dark-bottom;
+    border-bottom: 1px solid $gray-color-5;
 }
 
 .g-link-problem {

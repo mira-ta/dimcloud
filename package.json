@@ -1,11 +1,9 @@
 {
     "name": "dimcloud",
-    "version": "1.0.0",
+    "version": "1.1.0a",
     "description": "soundcloud.com dark material theme with mixes of orange color. npm config only for private sass retributing.",
     "scripts": {
-        "build": ".\\node_modules\\.bin\\node-sass src/scss/dimcloud.scss --output dist --recursive --output-style compressed",
-        "copy-manifest": "cp src/manifest.json dist/manifest.json && cp dimlogo.png dist/dimlogo.png",
-        "copy-content": "cp src/content.js dist/content.js"
+        "build": "src/build.sh"
     },
     "repository": {
         "type": "git",
@@ -17,8 +15,6 @@
     },
     "homepage": "https://github.com/mira-ta/dimcloud#readme",
     "devDependencies": {
-        "@babel/cli": "^7.7.0",
-        "@babel/core": "^7.7.2",
         "node-sass": "^4.13.0"
     }
 }

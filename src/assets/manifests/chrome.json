@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "dimcloud",
+    "version": "1.2a",
+
+    "default_locale": "en",
+    "description": "Soundcloud dark theme written with dark soul :3",
+    "icons": {
+        "128": "dimlogo.png",
+        "64": "dimlogo.png",
+        "256": "dimlogo.png"
+    },
+  
+    "author": "mira-ta",
+
+    "content_scripts": [{
+        "matches": ["https://soundcloud.com/*"],
+        "js": ["dimcloud.js"],
+        "run_at": "document_start"
+    }],
+
+    "homepage_url": "https://github.com/mira-ta/dimcloud",
+
+    "incognito": "split",
+
+    "offline_enabled": false,
+
+    "permissions": ["tabs"]
+}
