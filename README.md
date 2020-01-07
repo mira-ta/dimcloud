@@ -1,14 +1,30 @@
 # dimcloud
-![users](https://img.shields.io/static/v1?label=Stars&message=no%20store&color=red&style=flat)
-![rating](https://img.shields.io/static/v1?label=Users&message=no%20store&color=red&style=flat)
+![rating](https://img.shields.io/github/stars/mira-ta/dimcloud)
+![forks](https://img.shields.io/github/forks/mira-ta/dimcloud)
+![license](https://img.shields.io/github/license/mira-ta/dimcloud)
+![repo size](https://img.shields.io/github/repo-size/mira-ta/dimcloud)
 
-## A darker theme for SoundCloud.
+What if SoundCloud were dark? Ugh, you may have seen the extensions. But this one designed with a heart and a lot of ~~gloomy~~ love.
 
-What if SoundCloud were dark? Ugh, you may have seen the extensions. But this one designed with a heart and a lot of ~~gloomy~~ love. Feel absolutely free to contribute to it. Also, if you found a bug or css mistake, please, go to issues.
+Feel absolutely free to contribute to it. Also, if you found a bug or css mistake, please, go to issues.
+
+![screenshot](/assets/example.png)
 
 ## Installing
 
-Go to `src` folder to checkout [readme](src/README.md).
+```sh
+# build the extension into `./dist` folder.
+npm run build
+```
+
+```sh
+npm run build -h
+```
+
+```sh
+# to pass type of build
+npm run build --type=chrome|firefox|opera --dist=path 
+```
 
 ## Changelog:
 
