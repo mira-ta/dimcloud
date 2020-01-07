@@ -476,3 +476,8 @@ html, body {
 .mixedSelectionModule {
     border: none;
 }
+
+.header > li > a:focus,
+.header__navMenu > li > a.selected {
+    background-color: $gray-color-0 !important;
+}
