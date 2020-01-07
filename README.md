@@ -18,12 +18,12 @@ npm run build
 ```
 
 ```sh
-npm run build -h
+npm run build -- -h
 ```
 
 ```sh
-# to pass type of build
-npm run build --type=chrome|firefox|opera --dist=path 
+# example: building for firefox
+npm run build -- -mfirefox
 ```
 
 ## Changelog:
