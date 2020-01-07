@@ -6,10 +6,17 @@ Options:
     -m(chrome|firefox|opera)    Specify target manifest
                                 (default: chrome).
     -d=<PATH>                   Distribution path (default: dist).
-    -h                          Show command help."
+    -h                          Show command help.
+    -F                          Do npm install before executing.
+    -f, --force                 Do npm install from current package.json (npm install)"
 
 declare DISTRIBUTION_TYPE="chrome";
 declare DISTRIBUTION_PATH="dist";
+
+declare DO_NPM="_t0";
+# _t0 - Do not
+# _t1 - npm install
+# _t2 - npm install <specified packages>
 
 for argument in $@; do
     case $argument in
@@ -23,60 +30,60 @@ for argument in $@; do
         -h)
             echo "$__USAGE";
             exit;;
+        -f|--force)
+            DO_NPM=_t1;
+            shift;;
+        -F)
+            DO_NPM=_t2;
+            shift;;
     esac;
 done;
 
+if ! ls -A | grep "package.json" -q; then
+    echo "Not in a project directory (no package.json file found). Aborting.";
+    exit;
+fi;
+
+
+npm_() {
+    if [[ $DO_NPM == _t0 ]]; then
+        return -1;
+    else
+        if [[ -d npm ]]; then
+            echo "npm is not installed in the system.";
+            return -1;
+        fi;
+
+        case $DO_NPM in
+            _t1)
+                npm install;
+                return $?;;
+            _t2)
+                npm install $*;
+                return $?;;
+        esac;
+    fi;
+}
+
+npm_ --save-dev @babel/core @babel/preset-env @babel/cli babel-preset-minify node-sass
 
 sass() (
-    _is_project_dir() {
-        ls -A | grep "package.json" -q
-    }
-
-    _does_npm_exist() {
-        [[ ! -d npm ]];
-        return $?;
-    }
-
-    _is_sass_installed() {
-        if _is_project_dir; then
-            [[ -f node_modules/node-sass/bin/node-sass ]];
-            return $?;
-        else
-            [[ -d node-sass ]];
-            return 0;
-        fi;
-    }
-
-    if ! _is_sass_installed; then
-        if _does_npm_exist; then
-            if _is_project_dir; then
-                npm install --save-dev node-sass;
-            else
-                npm install -g node-sass;
-            fi;
-        else
-            echo "npm is not installed and node-sass does not exist in the PATH either in the node_modules/node-sass/bin folder. aborting.";
-            return;
-        fi;
-    fi;
-
-    if _is_project_dir; then
-        node_modules/node-sass/bin/node-sass $*;
-        return $?;
-    else
-        node-sass $*;
-        return $?;
-    fi;
+    node_modules/node-sass/bin/node-sass $*;
 )
-
 
 manifest() (
-    manif-get() {
-        echo "assets/manifests/$DISTRIBUTION_TYPE.json";
-    }
-
-    cp "$(manif-get)" $*;
+    cp "assets/manifests/$DISTRIBUTION_TYPE.json" $*;
 )
 
-sass --output "$DISTRIBUTION_PATH" "src/scss/dimcloud.scss";
+assets() (
+    cp assets/dimlogo.png "$*/dimlogo.png";
+)
+
+js() {
+    node node_modules/@babel/cli/bin/babel.js $*;
+}
+
+js -d "$DISTRIBUTION_PATH" --quiet --no-babelrc "src/js/content.js" --no-comments --presets minify;
+sass -q --output "$DISTRIBUTION_PATH" "src/scss/dimcloud.scss";
 manifest "$DISTRIBUTION_PATH/manifest.json";
+assets "$DISTRIBUTION_PATH"
