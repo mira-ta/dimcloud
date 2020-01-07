@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-declare __USAGE="Usage: $0 [OPTIONS]
+__USAGE="Usage: $0 [OPTIONS]
 
 Options:
     -m(chrome|firefox|opera)    Specify target manifest
@@ -10,10 +10,10 @@ Options:
     -F                          Do npm install before executing.
     -f, --force                 Do npm install from current package.json (npm install)"
 
-declare DISTRIBUTION_TYPE="chrome";
-declare DISTRIBUTION_PATH="dist";
+DISTRIBUTION_TYPE="chrome";
+DISTRIBUTION_PATH="dist";
 
-declare DO_NPM="_t0";
+DO_NPM="_t0";
 # _t0 - Do not
 # _t1 - npm install
 # _t2 - npm install <specified packages>
@@ -46,10 +46,10 @@ fi;
 
 
 npm_() {
-    if [[ $DO_NPM == _t0 ]]; then
-        return -1;
+    if [ $DO_NPM = _t0 ]; then
+        return 1;
     else
-        if [[ -d npm ]]; then
+        if [ -d npm ]; then
             echo "npm is not installed in the system.";
             return -1;
         fi;
