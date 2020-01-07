@@ -3,7 +3,7 @@
     "version": "1.1.0a",
     "description": "soundcloud.com dark material theme with mixes of orange color. npm config only for private sass retributing.",
     "scripts": {
-        "build": "if [[ ! -f src/build.sh ]]; then echo \"No build.sh found. Trying to download it from raw.githubusercontent.com\"; wget -O build.sh \"https://raw.githubusercontent.com/mira-ta/dimcloud/master/src/build.sh\"; fi; ./build.sh $*"
+        "build": "if [[ ! -f build.sh ]]; then echo \"No build.sh found. Trying to download it from raw.githubusercontent.com\"; wget -O build.sh \"https://raw.githubusercontent.com/mira-ta/dimcloud/master/build.sh\"; fi; ./build.sh $*"
     },
     "repository": {
         "type": "git",
