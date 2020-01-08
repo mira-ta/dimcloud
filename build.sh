@@ -84,6 +84,6 @@ js() {
 }
 
 js -d "$DISTRIBUTION_PATH" --quiet --no-babelrc "src/js/content.js" --no-comments --presets minify;
-sass -q --output "$DISTRIBUTION_PATH" "src/scss/dimcloud.scss";
+sass -q --output-style compressed --output "$DISTRIBUTION_PATH" "src/scss/dimcloud.scss";
 manifest "$DISTRIBUTION_PATH/manifest.json";
 assets "$DISTRIBUTION_PATH"
