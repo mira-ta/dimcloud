@@ -253,3 +253,7 @@ a.sc-ministats {
         color: $gray-color-6 !important;
     }
 }
+
+.sc-button-dropdown:focus:not(.sc-button-disabled):not(:disabled) {
+    box-shadow: none !important;
+}

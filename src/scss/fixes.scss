@@ -451,10 +451,6 @@ html, body {
     background-color: transparent;
 }
 
-.paging-eof::before {
-    background: none;
-}
-
 .topStatsModules {
     .topStatsItemPlaceholder__text::after, .topStatsItemPlaceholder__text::before {
         background-color: $background-color !important;
@@ -480,4 +476,36 @@ html, body {
 .header > li > a:focus,
 .header__navMenu > li > a.selected {
     background-color: $gray-color-0 !important;
+}
+
+.trackManager__upsellWrapper,
+.quotaMeterWrapper {
+    background-color: transparent !important;
+}
+
+.soundBadge:not(.compact) {
+    &.active,
+    &.hover,
+    &:active,
+    &:hover {
+        background-color: $gray-color-0 !important;
+    }
+}
+
+.profileUploadFooter {
+    background-color: transparent !important;
+}
+
+.paging-eof::before {
+    background-image: none !important;
+}
+
+.editTrackModalButton {
+    &:not(:disabled):focus, &:not(:disabled):hover {
+        background-color: $adaptive-color-0 !important;
+        color: $background-color !important;
+    }
+
+    background-color: $background-color !important;
+    color: $gray-color-4 !important;
 }
