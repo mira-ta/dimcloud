@@ -23,19 +23,19 @@ for argument in $@; do
         -m*)
             # erase -t
             DISTRIBUTION_TYPE="${argument#-m}";
-            shift;;
+            ;;
         -d=*)
             DISTRIBUTION_PATH="${argument#-d=}";
-            shift;;
+            ;;
         -h)
             echo "$__USAGE";
             exit;;
         -f|--force)
             DO_NPM=_t1;
-            shift;;
+            ;;
         -F)
             DO_NPM=_t2;
-            shift;;
+            ;;
     esac;
 done;
 
