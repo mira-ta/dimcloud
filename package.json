@@ -1,0 +1,42 @@
+{
+  "name": "dimcloud",
+  "version": "0.2.0",
+  "description": "soundcloud.com dark theme with some P*rnhub style.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Ugh, it's kinda style extension... what kind of styles we can test by automatization?\"; exit 1;",
+    "build": "grunt"
+  },
+  "keywords": [
+    "js",
+    "css",
+    "sass",
+    "scss",
+    "soundcloud",
+    "soundcloud.com",
+    "aimp",
+    "dark-theme",
+    "theme",
+    "dark",
+    "dim",
+    "black"
+  ],
+  "repository": {
+    "url": "https://github.com/mira-ta/dimcloud"
+  },
+  "author": "mira-ta",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "grunt": "^1.1.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-sass": "^3.1.0",
+    "grunt-webpack": "^3.1.3",
+    "node-sass": "^4.14.0",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {}
+}
