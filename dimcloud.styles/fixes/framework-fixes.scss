@@ -1,0 +1,260 @@
+@import "../color-scheme.scss";
+
+
+@mixin invert-colors {
+    // Most of images requires too much work with inverting colors thus let us
+    // solve this problem with `filter: invert(100%)`
+    filter: invert(100%);
+}
+
+
+@mixin uninvert-colors {
+    filter: invert(0%) !important;
+}
+
+
+.sc-border-animated {
+    border: 1px solid $background-color !important; // This one is depended since most of inputs have one pixel border.
+    transition: border-color 100ms ease-in-out;
+}
+
+
+.sc-color-animated {
+    transition: color 100ms ease-in-out;
+}
+
+
+.sc-button, .sc-input, .sc-tag {
+    background-color: $background-color !important;
+    &:not(.sc-button-selected) {
+        color: $gray-color-7 !important;
+    }
+    // Let make it dark gray :)
+
+
+    @extend .sc-border-animated;
+    &:hover {
+        border-color: $adaptive-color-1 !important;
+    } @at-root {
+        .sc-input:focus {
+            border-color: $adaptive-color-1 !important;
+        }
+    }
+}
+
+// Some fixes for hintButton. Like, an exception.
+.sc-button.hintButton {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+
+.sc-text {
+    color: $adaptive-color-1 !important;
+}
+
+
+.sc-tag, .sc-tag:visited {
+    &::before {
+        color: $gray-color-4;
+    }
+}
+
+
+.sc-button {
+    &.sc-button-small,
+    &.sc-button-medium {
+        &.sc-button-share::before,
+        &.sc-button-more::before,
+        &.sc-button-addtoset::before,
+        &.sc-button-startstation::before,
+        &.sc-button-message::before,
+        &.sc-button-like::before,
+        &.sc-button-repost::before,
+        &.sc-button-edit::before,
+        &.sc-button-addtoset::before {
+            &:not(.sc-button-lightfg) {
+                @include invert-colors();
+                color: #ffffff !important;
+            }
+        }
+    }
+
+    // url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KICA8cGF0aCBmaWxsPSJyZ2IoMzQsIDM0LCAzNCkiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTUuNTQyIDEuMTY3YzIuNzcgMCAzLjM4NiAyLjkxNiAyLjE1NSA2LjEyNSAzLjE2OSAxLjMwOCAzLjM4NiAzLjk3NyAzLjM4NiA0Ljk1OEgwYzAtLjk4MS4yMTgtMy42NSAzLjM4Ny00Ljk1OC0xLjIzMi0zLjIxOC0uNjE2LTYuMTI1IDIuMTU1LTYuMTI1em0wIDEuMTY2Yy0xLjU4NCAwLTIuMTI3IDEuNzctMS4wNjYgNC41NDIuMjI2LjU5LS4wNiAxLjI1NC0uNjQ0IDEuNDk1LTEuNTE3LjYyNi0yLjI2MyAxLjU3Mi0yLjUzNyAyLjcxM2g4LjQ5NGMtLjI3NS0xLjE0MS0xLjAyLTIuMDg3LTIuNTM3LTIuNzEzYTEuMTY3IDEuMTY3IDAgMCAxLS42NDQtMS40OTZjMS4wNi0yLjc2NC41MTYtNC41NC0xLjA2Ni00LjU0em02LjQxNC0uNTgzYy4xNyAwIC4yOTQuMTMuMjk0LjI5MlYzLjVoMS40NThjLjE1NyAwIC4yOTIuMTMyLjI5Mi4yOTR2LjU3OGMwIC4xNy0uMTMuMjk1LS4yOTIuMjk1SDEyLjI1djEuNDU4YS4yOTYuMjk2IDAgMCAxLS4yOTQuMjkyaC0uNTc4YS4yODkuMjg5IDAgMCAxLS4yOTUtLjI5MlY0LjY2N0g5LjYyNWEuMjk2LjI5NiAwIDAgMS0uMjkyLS4yOTV2LS41NzhjMC0uMTcuMTMxLS4yOTQuMjkyLS4yOTRoMS40NThWMi4wNDJjMC0uMTU3LjEzMi0uMjkyLjI5NS0uMjkyaC41Nzh6Ii8+Cjwvc3ZnPgo=)
+    &.sc-button-follow:not(.sc-button-selected)::before {
+        $follow-before-fix-data: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KICA8cGF0aCBmaWxsPSJyZ2IoMzQsIDM0LCAzNCkiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTUuNTQyIDEuMTY3YzIuNzcgMCAzLjM4NiAyLjkxNiAyLjE1NSA2LjEyNSAzLjE2OSAxLjMwOCAzLjM4NiAzLjk3NyAzLjM4NiA0Ljk1OEgwYzAtLjk4MS4yMTgtMy42NSAzLjM4Ny00Ljk1OC0xLjIzMi0zLjIxOC0uNjE2LTYuMTI1IDIuMTU1LTYuMTI1em0wIDEuMTY2Yy0xLjU4NCAwLTIuMTI3IDEuNzctMS4wNjYgNC41NDIuMjI2LjU5LS4wNiAxLjI1NC0uNjQ0IDEuNDk1LTEuNTE3LjYyNi0yLjI2MyAxLjU3Mi0yLjUzNyAyLjcxM2g4LjQ5NGMtLjI3NS0xLjE0MS0xLjAyLTIuMDg3LTIuNTM3LTIuNzEzYTEuMTY3IDEuMTY3IDAgMCAxLS42NDQtMS40OTZjMS4wNi0yLjc2NC41MTYtNC41NC0xLjA2Ni00LjU0em02LjQxNC0uNTgzYy4xNyAwIC4yOTQuMTMuMjk0LjI5MlYzLjVoMS40NThjLjE1NyAwIC4yOTIuMTMyLjI5Mi4yOTR2LjU3OGMwIC4xNy0uMTMuMjk1LS4yOTIuMjk1SDEyLjI1djEuNDU4YS4yOTYuMjk2IDAgMCAxLS4yOTQuMjkyaC0uNTc4YS4yODkuMjg5IDAgMCAxLS4yOTUtLjI5MlY0LjY2N0g5LjYyNWEuMjk2LjI5NiAwIDAgMS0uMjkyLS4yOTV2LS41NzhjMC0uMTcuMTMxLS4yOTQuMjkyLS4yOTRoMS40NThWMi4wNDJjMC0uMTU3LjEzMi0uMjkyLjI5NS0uMjkyaC41Nzh6Ii8+Cjwvc3ZnPgo=";
+        background-image: url($follow-before-fix-data) !important;
+    }
+
+    &.sc-button-like:not(.sc-button-selected)::before {
+        $play-before-fix-data: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCiAgICA8ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICAgICAgPHBhdGggZD0iTTEwLjgwNDk4MTgsMyBDOC43ODQ3MTU3OSwzIDguMDAwNjUyODUsNS4zNDQ4NjQ4NiA4LjAwMDY1Mjg1LDUuMzQ0ODY0ODYgQzguMDAwNjUyODUsNS4zNDQ4NjQ4NiA3LjIxMjk2Mzg3LDMgNS4xOTYwNDQ5NCwzIEMzLjQ5NDMxMzE4LDMgMS43NDgzNzQsNC4wOTU5MjY5NCAyLjAzMDA4OTk2LDYuNTE0MzA1MzIgQzIuMzczNzI3NjUsOS40NjY3Mzc3NSA3Ljc1NDkxOTE3LDEyLjk5Mjg3MzggNy45OTMxMDk1OCwxMy4wMDEwNTU3IEM4LjIzMTI5OTk4LDEzLjAwOTIzNzggMTMuNzMwOTgyOCw5LjI3ODUzNzggMTMuOTgxNDU5LDYuNTAxMjQwNSBDMTQuMTg3ODY0Nyw0LjIwMDk3MDIzIDEyLjUwNjcxMzYsMyAxMC44MDQ5ODE4LDMgWiIgaWQ9IkltcG9ydGVkLUxheWVycyIgZmlsbD0iIzIyMjIyMiI+PC9wYXRoPg0KICAgIDwvZz4NCjwvc3ZnPg0K";
+        background-image: url($play-before-fix-data) !important;
+    }
+
+    // Creating a new rule will be better than a lot of :not in one.
+    @at-root {
+        .sc-button-selected {
+            &.sc-button-share::before,
+            &.sc-button-more::before,
+            &.sc-button-addtoset::before,
+            &.sc-button-startstation::before,
+            &.sc-button-message::before,
+            &.sc-button-like::before,
+            &.sc-button-repost::before,
+            &.sc-button-edit::before,
+            &.sc-button-addtoset::before {
+                &:not(.sc-button-lightfg) {
+                    @include uninvert-colors();
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+
+    .sc-button-label-default, .sc-button-label-hover, .sc-button-label-alt {
+        color: $gray-color-7 !important;
+    }
+
+    &.sc-button-play::before {
+        $button-play-background: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCA4IDE0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNjUzLjAwMDAwMCwgLTg5MC4wMDAwMDApIiBmaWxsPSIjRjg1NDAyIj4KICAgICAgICAgICAgPHBhdGggZD0iTTE2NTMsOTA0IEwxNjU0Ljg0NjE1LDg5NyBMMTY1Myw4OTAgTDE2NjEsODk3IEwxNjUzLDkwNCBaIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=";
+        background-image: url($button-play-background) !important;
+    }
+
+    &.sc-button-pause::before {
+        $button-pause-background: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjEycHgiIHZpZXdCb3g9IjAgMCA4IDEyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNjg5LjAwMDAwMCwgLTg5MS4wMDAwMDApIiBmaWxsPSIjRjg1NDAyIj4KICAgICAgICAgICAgPHBhdGggZD0iTTE2OTQsODkxIEwxNjk0LDkwMyBMMTY5Nyw5MDMgTDE2OTcsODkxIEwxNjk0LDg5MSBaIE0xNjg5LDg5MSBMMTY4OSw5MDMgTDE2OTIsOTAzIEwxNjkyLDg5MSBMMTY4OSw4OTEgWiI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+";
+        background-image: url($button-pause-background) !important;
+    }
+}
+
+.sc-text {
+    .sc-text-light {
+        color: $gray-color-7 !important;
+    }
+    .sc-text-dark {
+        color: $gray-color-5 !important;
+    }
+    color: $gray-color-6 !important;
+}
+
+
+
+.sc-link-dark,
+.sc-link-light {
+    &:hover, &:active {
+        color: $adaptive-color-0 !important;
+    }
+}
+
+.sc-link-dark {
+    color: $gray-color-6 !important;
+}
+.sc-link-light {
+    color: $gray-color-7 !important;
+}
+
+
+a.sc-ministats {
+    @extend .sc-link-dark;  
+}
+
+
+// borders
+.sc-border-light {
+    border: 1px solid $adaptive-color-0;
+}
+.sc-border-light-right {
+    border-right: 1px solid $adaptive-color-0;
+}
+.sc-border-light-bottom {
+    border-bottom: 1px solid $adaptive-color-0;
+}
+.sc-border-light-top {
+    border-top: 1px solid $adaptive-color-0;
+}
+.sc-border-light-left {
+    border-left: 1px solid $adaptive-color-0;
+}
+
+.sc-border-dark {
+    border: 1px solid $gray-color-5;
+}
+.sc-border-dark-right {
+    border-right: 1px solid $gray-color-5;
+}
+.sc-border-dark-bottom {
+    border-bottom: 1px solid $gray-color-5;
+}
+.sc-border-dark-top {
+    border-top: 1px solid $gray-color-5;
+}
+.sc-border-dark-left {
+    border-left: 1px solid $gray-color-5;
+}
+
+
+.sc-background-white,
+.sc-background-light {
+    // TODO: try '$background-color-index'
+    background-color: unset !important;
+}
+
+
+.g-tabs {
+    @extend .sc-border-dark-bottom;
+
+    .g-tabs-link {
+        color: $gray-color-6 !important;
+        border-color: $gray-color-5 !important;
+
+        transition: color 100ms ease-in-out,
+                    border-color 100ms ease-in-out;
+        
+        &:focus,
+        &:hover,
+        &.active {
+            color: $adaptive-color-0 !important;
+            border-color: $adaptive-color-0 !important;
+        }
+    }
+}
+
+.g-modal-title-h1,
+.g-modal-title-h2,
+.g-modal-title-h3 {
+    color: $adaptive-color-0 !important;
+    border-color: $adaptive-color-0 !important;
+}
+
+.g-modal-section {
+    background-color: transparent;
+}
+
+.g-form-section-head {
+    border-bottom: 1px solid $gray-color-5;
+}
+
+.g-link-problem {
+    padding: 4px 20px !important;
+    background-position: 2px 2px;
+}
+
+
+// Others
+.sc-snippet-badge-small,
+.queue__hide:focus, .queue__hide:hover, .queue__hide // TODO: work with this
+{
+    @include invert-colors();
+}
+
+.sc-buylink,
+.sc-buylink:visited {
+    color: $gray-color-5 !important;
+
+    &:hover {
+        color: $gray-color-6 !important;
+    }
+}
+
+.sc-button-dropdown:focus:not(.sc-button-disabled):not(:disabled) {
+    box-shadow: none !important;
+}

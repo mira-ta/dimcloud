@@ -1,0 +1,508 @@
+@import "../color-scheme.scss";
+
+
+html, body {
+    // Background filler for containers to make it look
+    // from top to bottom.
+    $background-container-filler: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABNgAAABkCAYAAABU8Y1hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAALeSURBVHhe7dgxEYAADMDAggg4/AuFBQXN+r/EQ47rft4BAAAAAFbOvwAAAADAgsEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAACBwQYAAAAAgcEGAAAAAIHBBgAAAABrMx991AIN/iqaoQAAAABJRU5ErkJggg==';
+    background: $background-color url($background-container-filler) repeat-y 50% 0 !important;
+
+    color: $gray-color-7;
+}
+
+.header {
+    background-color: $container-color !important;
+}
+
+.listenEngagement {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.dropbar__content {
+    background-color: $background-color !important;
+}
+
+.commentPopover__body,
+.commentPopover.darkText {
+    color: $gray-color-7 !important;
+}
+
+.commentForm__input {
+    background-color: $background-color !important;
+    border-color: $background-color !important;
+
+    color: $gray-color-7;
+}
+
+.commentForm__input,
+.commentForm__avatar span::before {
+    transition: border-color 100ms ease-in-out;
+}
+
+.commentForm__avatar span::before {
+    content: '';
+    border: transparent solid 1px;
+    border-right: none !important;
+
+    width: 19px;
+    height: 18px;
+
+    display: block;
+}
+
+.commentForm__wrapper:hover {
+    .commentForm__input,
+    .commentForm__avatar span::before {
+        border-color: $adaptive-color-0 !important;
+    }
+}
+
+.playControls {
+    $playcontrols-dark: $background-color;
+
+    .playControls__bg, .playControls__inner {
+        background-color: $adaptive-color-0 !important;
+        border-top: 1px solid $adaptive-color-0 !important;
+    }
+
+    .volume__sliderBackground {
+        background-color: $playcontrols-dark !important;
+    }
+
+    .playControls__control,
+    .volume__button {
+        filter: contrast(100);
+    }
+
+    .volume__sliderWrapper,
+    .volume__sliderWrapper::before,
+    .volume__sliderWrapper::after {
+        background-color: $background-color !important;
+        border-color: $background-color !important;
+    }
+
+    .playbackTimeline {
+        .playbackTimeline__timePassed,
+        .playbackTimeline__duration {
+            color: $playcontrols-dark !important;
+        }
+        .playbackTimeline__progressBackground {
+            background-color: $playcontrols-dark !important;
+        }
+        .playbackTimeline__progressBar,
+        .playbackTimeline__progressHandle {
+            background-color: $adaptive-color-2;
+            border-color: $adaptive-color-2;
+        }
+    }
+
+    .playControls__soundBadge {
+        .playbackSoundBadge__lightLink {
+            color: $container-color !important;
+        }
+        .playbackSoundBadge__titleLink {
+            color: $playcontrols-dark !important;
+        }
+        .playbackSoundBadge__avatar {
+            box-shadow: 0 0 0 1px $playcontrols-dark;
+        }
+        .playbackSoundBadge__showQueue {
+            background-color: $background-color !important;
+
+            border-radius: 3px;
+            height: 24px;
+
+            margin-left: 4px;
+            
+            border: 1px solid $background-color;
+            transition: border-color 100ms ease-in-out;
+            &:hover {
+                border-color: $adaptive-color-1 !important;
+            }
+        }
+    }
+}
+
+
+.modal {
+    .modal__modal {
+        background-color: $container-color;
+    }
+
+    &.modalWhiteout,
+    .modalWhiteout /* so this is modalBlackout */ {
+        background-color: #00000032 !important;
+    }
+}
+
+
+.dialog {
+    background-color: $container-color;
+    border-color: $container-color;
+
+    .dialog__arrow {
+        background-color: $container-color;
+        border-color: $container-color;
+    }
+}
+
+.profileSettings__cell {
+    label {
+        color: $gray-color-6;
+    }
+}
+
+.hintButton {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.sound__soundActions,
+.commentForm__wrapper,
+.searchTitle {
+    background-color: $container-color !important;
+}
+
+.soundBadge__additional {
+    background: none !important;
+}
+
+.commentForm__wrapper {
+    border-color: transparent !important; // not to break the borders sizings
+}
+
+.moreActions {
+    background-color: $background-color !important;
+    border-color: $background-color !important;
+
+    .moreActions__button {
+        background-color: transparent;
+
+        &:hover {
+            background-color: $adaptive-color-0 !important;
+            color: $background-color !important;
+        }
+
+        &.sc-button-selected:hover {
+            background-color: $adaptive-color-2 !important;
+        }
+
+        &.sc-button-selected {
+            color: $adaptive-color-0 !important;
+        }
+
+        color: $gray-color-4;
+
+        &:not(:last-child) {
+            border-bottom: none !important;
+        }
+    }
+
+    .moreActions__group:not(:first-child) {
+        border-color: transparent !important;
+    }
+}
+
+.queue {
+    background-color: $background-color !important;
+    box-shadow: 0 0 2px #00000032;
+
+    .queue__scrollbarInner,
+    .queue__itemsHeight,
+    .queue__itemWrapper {
+        background-color: $background-color !important;
+    }
+
+    .queueItemView.m-active,
+    .queueItemView:hover {
+        background-color: $container-color !important;
+    }
+
+    .queueItemView__more {
+        margin-left: 4px;
+
+        &:not(.sc-button-selected):not(:hover)::before {
+            filter: invert(50%);
+        }
+
+        &.sc-button-more:hover {
+            background-color: $adaptive-color-0 !important;
+
+            &::before {
+                visibility: hidden;
+            }
+        }
+    }
+
+    .queue__fallback.queue__itemWrapper {
+        padding-top: 8px;
+    }
+
+    .queueItemView__like::before,
+    .queueItemView__more::before {
+        left: -1px !important;
+    }
+
+    .queueFallback__stationMode {
+        border-top: none !important;
+    }
+    
+    .queue__panel {
+        border-bottom: none !important;
+    }
+
+    .queue__itemsHeight {
+        background-image: none !important;
+    }
+
+    .queue__hide {
+        background-color: transparent !important;
+        border-color: transparent !important;
+
+        &:active,
+        &:hover {
+            outline: none !important;
+            border: none !important;
+        }
+    }
+
+    .queueItemView__remove {
+        &:hover {
+            $remove-button-image-hover: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiNmODU0MDIiIGQ9Ik0xNS41IDkuMjA1bC0uNzA1LS43MDVMMTIgMTEuMjk1IDkuMjA1IDguNWwtLjcwNS43MDVMMTEuMjk1IDEyIDguNSAxNC43OTVsLjcwNS43MDVMMTIgMTIuNzA1bDIuNzk1IDIuNzk1LjcwNS0uNzA1TDEyLjcwNSAxMnoiLz4KPC9zdmc+Cg==";
+            background-image: url($remove-button-image-hover) !important;
+        }
+
+        background-position: -1px -1px !important;
+
+        $remove-button-image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiM4MDgwODAiIGQ9Ik0xNS41IDkuMjA1bC0uNzA1LS43MDVMMTIgMTEuMjk1IDkuMjA1IDguNWwtLjcwNS43MDVMMTEuMjk1IDEyIDguNSAxNC43OTVsLjcwNS43MDVMMTIgMTIuNzA1bDIuNzk1IDIuNzk1LjcwNS0uNzA1TDEyLjcwNSAxMnoiLz4KPC9zdmc+Cg==";
+        background-image: url($remove-button-image) !important;
+    }
+}
+
+.searchMenu__searchFor {
+    background-color: $background-color !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.autocompleteItem {
+    &.g-dark-selected {
+        background-color: $container-color !important;
+    }
+
+    background-color: $background-color !important;
+}
+
+.l-listen-wrapper .l-about-rows {
+    border-right: none !important;
+}
+
+.image__whiteOutline .image__full {
+    border: none !important;
+}
+
+.l-fixed-top-one-column > .l-top {
+    background-color: $container-color !important;
+}
+
+.conversation {
+    .conversation__actions {
+        background-color: $container-color !important;
+        box-shadow: none !important;
+    }
+
+    .conversationMessage__body {
+        color: $gray-color-6;
+    }
+
+    .conversationMessage__from .sc-link-dark {
+        &:hover {
+            color: $adaptive-color-0 !important;
+        }
+        color: $gray-color-7 !important;
+    }
+
+    .composeMessage__bottomWrapper {
+        border-color: transparent !important;
+    }
+}
+
+.commentBadgeList__item {
+    border-top: none !important;
+}
+
+.l-messages-left .inbox {
+    .inbox__item {
+        .inboxItem {
+            &.active,
+            &:hover,
+            &:active {
+                background-color: $background-color !important;
+            }
+        }
+        &::before {
+            display: none !important;
+        }
+    }
+}
+
+.keyboardShortcuts__shortcutsGroup > dl > dt > kbd > kbd {
+    background-color: $background-color !important;
+}
+
+.userDropbar {
+    .sc-button {
+        background-color: black !important;
+    }
+}
+
+.ownActivitiesList {
+    .ownActivitiesList__item {
+        border: none !important;
+        
+        .userBadge {
+            .userBadge__meta {
+                margin-top: 4px;
+            }
+
+            .sc-ministats-small.sc-ministats-sounds::before {
+                filter: invert(30%); // color is too gray
+            }
+        }
+
+        .ownActivity__user,
+        .ownActivity__top {
+            border: none !important;
+        }
+
+        .ownActivity__top {
+            display: flex;
+            .ownActivity__user {
+                flex-grow: 1;
+                padding-right: 112px;
+                padding-bottom: 9px;
+            }
+        }
+    }
+}
+
+.selectionPlaylistBanner {
+    background: transparent !important;
+    .backgroundGradient__buffer {
+        background: transparent !important;
+    }
+}
+
+.compactTrackList {
+    border: none !important;
+
+    .compactTrackListItem__number,
+    .compactTrackListItem__trackTitle {
+        color: $gray-color-7;
+    }
+
+    .compactTrackListItem {
+        &.clickToPlay:hover {
+            .compactTrackListItem__number,
+            .compactTrackListItem__trackTitle {
+                color: $adaptive-color-0;
+            }
+        }
+
+        &.active,
+        &.clickToPlay:hover {
+            background-color: $background-color !important;
+        }
+
+        .compactTrackListItem__number,
+        .compactTrackListItem__trackTitle,
+        .compactTrackListItem__plays {
+            color: $gray-color-7;
+        }
+
+        .compactTrackListItem__additional {
+            background: none !important;
+        }
+    }
+}
+
+.uploadMain {
+    > div,
+    .quotaMeterWrapper {
+        background: none !important;
+        border: none !important;
+    }
+}
+
+.tabs__headingContainer,
+.tabs__tabs {
+    background-color: transparent !important;
+}
+
+.truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper::after {
+    background: none !important;
+}
+
+.profileUploadFooter {
+    background-color: transparent;
+}
+
+.topStatsModules {
+    .topStatsItemPlaceholder__text::after, .topStatsItemPlaceholder__text::before {
+        background-color: $background-color !important;
+    }
+
+    .topStats__wrapperEligible:focus, .topStats__wrapperEligible:hover {
+        background-color: transparent;
+    }
+
+    .topStatsModule__item {
+        border: 1px solid transparent;
+    }
+}
+
+.statsOverview__separator {
+    background-color: transparent !important;
+}
+
+.mixedSelectionModule {
+    border: none;
+}
+
+.header > li > a:focus,
+.header__navMenu > li > a.selected {
+    background-color: $gray-color-0 !important;
+}
+
+.trackManager__upsellWrapper,
+.quotaMeterWrapper {
+    background-color: transparent !important;
+}
+
+.soundBadge:not(.compact) {
+    &.active,
+    &.hover,
+    &:active,
+    &:hover {
+        background-color: $gray-color-0 !important;
+    }
+}
+
+.profileUploadFooter {
+    background-color: transparent !important;
+}
+
+.paging-eof::before {
+    background-image: none !important;
+}
+
+.editTrackModalButton {
+    &:not(:disabled):focus, &:not(:disabled):hover {
+        background-color: $adaptive-color-0 !important;
+        color: $background-color !important;
+    }
+
+    background-color: $background-color !important;
+    color: $gray-color-4 !important;
+}
