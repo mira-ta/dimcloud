@@ -5,21 +5,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
-        // babel: {
-        //     compile: {
-        //         options: {
-        //             sourceMap: true,
-        //             presets: [
-        //                 "@babel/preset-env"
-        //             ],
-        //         },
-        //         files: {
-        //             "dist/extension.js": "dimcloud.injector/injector.js",
-        //         },
-        //       },
-        // },
-
-
         sass: {
             options: {
                 style: "minified",

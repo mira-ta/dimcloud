@@ -23,3 +23,4 @@ See `LICENSE` file.
 ## Contributing
 
 There are no restrictions yet. If you are experienced with build systems and stuff so you can offer better solution - you're welcome.
+
