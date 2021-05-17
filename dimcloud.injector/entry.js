@@ -1,9 +1,8 @@
 /* Licensed under GPL-3.0-only or GPL-3.0-or-later */
 import { Builder, Injector } from "./injector";
 
-window.addEventListener("load", () =>
+window.addEventListener("load", () => {
     new Injector(
-        new Builder().href("dimcloud.css").build()
+        new Builder().href("./main.css").build()
     ).inject(document.head);
-);
-
+});
