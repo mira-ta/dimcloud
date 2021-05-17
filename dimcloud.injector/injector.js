@@ -15,7 +15,7 @@ export class Builder {
     }
 
     type(value) {
-        if (/css$/.match(value))
+        if (value.match(/css$/))
             this._type = value;
         else
             throw "Not a CSS mime type. Not supported yet and won't be.";
@@ -24,7 +24,7 @@ export class Builder {
     }
 
     href(value) {
-        if (/\.css$/.match(value))
+        if (value.match(/\.css$/))
             this._href = this._get_url(value);
         else
             throw "Not a CSS file. Not supported yet and won't be.";
@@ -53,7 +53,7 @@ export class Builder {
     }
 
     _get_url(href) {
-        return (this._get_browser == "chrome" ? chrome.extension.getURL : browser.runtime.getURL)(href);
+        return (this._get_browser() == "chrome" ? chrome.extension.getURL : browser.runtime.getURL)(href);
     }
 }
 
@@ -64,8 +64,8 @@ export class Injector {
     }
 
     inject(object) {
-        if (this._element.parentElement)
-            object.appendChild(this._element);
+        // if (this._element.parentElement)
+        object.appendChild(this._element);
     }
 }
-
+    
